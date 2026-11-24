@@ -23,7 +23,7 @@ export default function ConfettiEffect() {
     function updateSize() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() =>
-        setDimensions({ width: window.innerWidth, height: window.innerHeight })
+        setDimensions({ width: window.innerWidth, height: window.innerHeight }),
       );
     }
     updateSize();

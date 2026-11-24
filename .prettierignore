@@ -1,0 +1,11 @@
+.next
+.agents
+.claude
+.idea
+out
+build
+node_modules
+skills
+next-env.d.ts
+package-lock.json
+skills-lock.json

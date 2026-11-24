@@ -10,7 +10,7 @@ async function getTotalContents(): Promise<number | null> {
   try {
     const response = await fetch(
       `${TABNEWS_API}/contents?page=1&per_page=1&strategy=new`,
-      { cache: "no-store", signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) }
+      { cache: "no-store", signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) },
     );
 
     const headerTotal = response.ok
@@ -28,7 +28,7 @@ async function getTotalContents(): Promise<number | null> {
 
     const analyticsRes = await fetch(
       `${TABNEWS_API}/analytics/root-content-published`,
-      { cache: "no-store", signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) }
+      { cache: "no-store", signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) },
     );
     if (analyticsRes.ok) {
       const data: Array<{ date: string; amount: string | number }> =
@@ -70,7 +70,9 @@ export default function Home() {
             Total de conteúdos publicados no TabNews
           </span>
           <strong className="stats-value" aria-live="polite">
-            <Suspense fallback={<span className="stats-loading">Carregando…</span>}>
+            <Suspense
+              fallback={<span className="stats-loading">Carregando…</span>}
+            >
               <TotalContents />
             </Suspense>
           </strong>

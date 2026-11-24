@@ -7,7 +7,11 @@ export const metadata: Metadata = {
     "Estamos nesse exato momento reconstruindo o TabNews, um lugar na internet para quem trabalha com tecnologia e precisa comsumir conteúdos com valor concreto",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR">
       <body>{children}</body>
